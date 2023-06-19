@@ -51,7 +51,19 @@ public class My_linkedlist {
        prev1.next=prev1.next.next;
       
 	}
-	
+	void getelement(int N,Node head) {
+		Node temp;
+		temp=head;
+		int count=0;
+		while(temp!=null) {
+			if(count==N) {
+				System.out.println(temp.data);
+			}
+			count++;
+			temp=temp.next;
+		}
+		
+	}
 	
 	
 	public static void main(String[] args) {
@@ -79,7 +91,10 @@ public class My_linkedlist {
 		System.out.println("linked list after deletion:-");
 		list.delete(head, 2);
 		list.dispaly(a);
+                 System.out.println(" ");
+		System.out.println("linked list after get:-");
+		list.getelement(3, head);
 		
-	}
+	}}
 
 }
