@@ -1,0 +1,85 @@
+package com.java.llinked_list;
+
+
+
+public class My_linkedlist {
+	static class Node{
+		Node head;
+		int data;
+		Node next;
+		
+		Node(int data){
+			this.data=data;
+			
+		}
+	}
+	static void dispaly(Node head) {
+		Node temp=head;
+		while(temp!=null) {
+			System.out.print(temp.data+ " ");
+			temp=temp.next;
+		}
+	}
+	
+	void insert(int data,Node head,int position) {
+		Node add=new Node(data);
+           if(position==0) {
+        	   add.next=head;
+        	   head=add;
+        	   return;
+			
+		}
+           Node prev=head;
+          for(int i=0;i<position-1;i++){
+        	prev=prev.next;  
+          }
+          add.next=prev.next;
+          prev.next=add;
+         
+	}
+	void delete(Node head,int position) {
+        if(position==0) {
+     	   head=head.next;
+     	   return;
+			
+		}
+        Node prev1=head;
+       for(int i=0;i<position-1;i++){
+     	prev1=prev1.next;  
+       }
+       
+       prev1.next=prev1.next.next;
+      
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		Node a=new Node(10);
+		Node b=new Node(30);
+		Node c=new Node(50);
+		Node d=new Node(120);
+		Node e=new Node(150);
+		
+		Node head=a;
+		head.next=b;
+		b.next=c;
+		c.next=d;
+		d.next=e;
+		e.next=null;
+		
+		My_linkedlist list=new My_linkedlist();
+		System.out.println("linked list is :-");
+		list.dispaly(a);
+		System.out.println(" ");
+		System.out.println("linked list after insertion:-");
+		list.insert(500, head, 4);
+		list.dispaly(a);
+		System.out.println(" ");
+		System.out.println("linked list after deletion:-");
+		list.delete(head, 2);
+		list.dispaly(a);
+		
+	}
+
+}
