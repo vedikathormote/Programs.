@@ -1,0 +1,23 @@
+package com.java.hashiing;
+import java.util.*;
+
+public class Hasshmap {
+	public static void main(String[] args) {
+		
+	
+HashMap<String,Integer>map=new HashMap<>();
+
+map.put("India", 130);
+map.put("US", 100);
+map.put("China", 150);
+System.out.println(map);
+map.put("China", 250);
+System.out.println(map);//update
+System.out.println(map.get("China"));//key
+
+//search
+if(map.containsKey("china")) {
+	System.out.println("key exits");
+}
+else {
+	System.out.println("key doesnt exits");}
