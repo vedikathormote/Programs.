@@ -1,0 +1,75 @@
+public class Stack1 {
+    static class stack11{
+        Integer capacity;
+         Integer top;
+        Integer a[];
+       public stack11(Integer capacity){
+            this.capacity=capacity;
+            top=-1;
+            a=new Integer [capacity];
+        }
+        public void push(Integer data){
+
+           if(top==capacity-1){
+               System.out.println("overflow condition");
+           }
+           else{
+           top++;
+           a[top]=data;
+        }}
+        public Integer pop(){
+           if(top==-1){
+               return -1;
+           }else {
+           top--;
+           Integer res=a[top];
+           return res;
+        }}
+
+        public Integer peek(){
+            if(top==-1){
+                return -1;
+            }else{
+         return a[top];
+        }}
+
+        public boolean isempty(){
+           if(top==-1){
+            return true;
+          }
+           return false;
+
+
+       }
+       public boolean isfull(){
+           if(top==capacity-1){
+               return true;
+           }
+           return false;
+       }
+
+
+        public void display(){
+           for(int i=0;i<=top;i++){
+               System.out.println(a[i]);
+           }
+        }
+    }
+
+
+    public static void main(String[] args) {
+        stack11 sc=new stack11(5);
+        sc.push(10);
+        sc.push(20);
+        sc.push(30);
+        sc.push(40);
+        sc.push(50);
+        sc.push(60);
+        sc.display();
+        System.out.println(sc.isempty());
+        System.out.println(sc.isfull());
+
+
+
+    }
+}
