@@ -1,0 +1,70 @@
+public class MY_queue {
+  static  class queue{
+        integer a[];
+        integer capacity;
+        integer rear;
+        public queue(integer n){
+            this.capacity=n;
+            a=new integer[n];
+            rear=-1;
+        }
+        public void enqueue(integer data){
+            if(rear==capacity-1){
+                System.out.println("queue is full");
+            }
+            else{
+                rear++;
+                a[rear]=data;
+            }
+        }
+        public void dequeue(){
+            if(rear==-1){
+                System.out.println("queue is empty");
+            }
+            else{
+                integer res=a[0];
+                for(int i=0;i<rear;i++){
+                    a[i]=a[+1];
+                }
+                rear--;
+                System.out.println(res);
+            }
+        }
+        public void display(){
+            for (int i=0;i<=rear;i++){
+                System.out.println(a[i]);
+            }
+        }
+        public boolean isempty(){
+            if(rear==-1){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        public boolean isfull(){
+            if(rear==capacity-1){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+    }
+
+    public static void main(String[] args) {
+        queue q=new queue(5);
+        q.enqueue(10);
+        q.enqueue(20);
+        q.enqueue(30);
+        q.enqueue(40);
+        q.enqueue(50);
+        q.enqueue(60);
+        q.display();
+        System.out.println(q.isempty());
+        System.out.println(q.isfull());
+        q.dequeue();
+    }
+}
