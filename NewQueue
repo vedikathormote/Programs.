@@ -1,14 +1,14 @@
 public class MY_queue {
   static  class queue{
-        integer a[];
-        integer capacity;
-        integer rear;
-        public queue(integer n){
+        Integer a[];
+        Integer capacity;
+        Integer rear;
+        public queue(Integer n){
             this.capacity=n;
-            a=new integer[n];
+            a=new Integer[n];
             rear=-1;
         }
-        public void enqueue(integer data){
+        public void enqueue(Integer data){
             if(rear==capacity-1){
                 System.out.println("queue is full");
             }
